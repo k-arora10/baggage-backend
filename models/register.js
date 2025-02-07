@@ -12,12 +12,12 @@ const teamSchema = new mongoose.Schema({
   members: { 
     type: [memberSchema], 
     required: true,
-    // validate: {
-    //   validator: function(v) {
-    //     return v.length >= 3 && v.length <= 5;
-    //   },
-    //   message: props => `A team must have between 3 and 5 members, but got ${props.value.length}.`
-    // }
+    validate: {
+      validator: function(v) {
+        return v.length >=1 && v.length <= 5;
+      },
+      message: props => `A team must have between 1 and 5 members, but got ${props.value.length}.`
+    }
   }
 });
 
